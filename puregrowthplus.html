@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Growth Plus - Natural Foliar Fertilizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-header {
+            background: linear-gradient(135deg, #e6f7e6, #c8e6c9);
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        .product-image {
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+        }
+        .feature-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card .card-header {
+            background-color: #4caf50;
+            color: white;
+            font-weight: bold;
+        }
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefits-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            color: #4caf50;
+            margin-right: 0.5rem;
+        }
+                :root {
+            --primary-green: #1e5631;
+            --secondary-green: #4c9a2a;
+            --light-green: #76b947;
+            --lighter-green: #a4de6c;
+            --lightest-green: #d1f0b1;
+            --dark-green: #0d2818;
+        }
+        
+        body {
+            font-family: 'Darker Grotesque', sans-serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: rgba(30, 86, 49, 0.95) !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-green) !important;
+            padding: 5px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--lighter-green);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-top: 120px;            
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-green);
+            border-color: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--light-green);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .clients-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .client-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            margin: 20px;
+            opacity: 0.7;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(30, 86, 49, 0.9), rgba(30, 86, 49, 0.9)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .products-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            border: none;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-title {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--light-green);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-green);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        .lead {
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+         li {
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .redu{
+            width: 300px;
+        }
+        
+.align-items-center p, .mb-4, .product-description {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-align: justify;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="redu" src="assets/innov_tech_logo_2.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clients">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-light ms-2 px-3" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <div class="product-header text-center">
+        <div class="container">
+            <h1 class="display-4">PURE GROWTH PLUS</h1>
+            <p class="lead">Unique natural foliar fertilizer for enhanced plant growth and stress resistance</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/pure_growth_plus.png" alt="Pure Growth Plus Product" class="img-fluid product-image rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">Nature's Growth Catalyst</h2>
+                <p>Pure growth Plus is a natural mineral fertilizer that uses its powerful natural components to stimulate processes in the plants that promote higher volume and enhanced quality of production. This purely natural product is free from chemical substances and allows obtaining harvest with excellent biological qualities for small gardeners, as well as large agricultural producers.</p>
+                
+                <h3 class="mt-4">Key Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Increased anti-stress resistance during dry/hot periods</li>
+                    <li>Significantly increased harvest volumes</li>
+                    <li>Improved nutritional content (proteins, sugars)</li>
+                    <li>Prolonged storage of harvested crops</li>
+                    <li>Enhanced efficiency of fertilizers and pesticides</li>
+                    <li>Improved plant immunity and health</li>
+                    <li>Better water management in plants</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>How Pure Growth Plus Works</h3>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-header">
+                                Stress Resistance
+                            </div>
+                            <div class="card-body">
+                                <p>Helps plants close pores to reduce water evaporation, making them more resilient to drought and temperature extremes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-header">
+                                Yield & Quality
+                            </div>
+                            <div class="card-body">
+                                <p>Boosts both quantity and quality of harvests, improving coloration, taste, and nutritional value of produce.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-header">
+                                Growth Support
+                            </div>
+                            <div class="card-body">
+                                <p>Accelerates photosynthesis and optimizes internal plant processes for vigorous growth and early fruiting.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-header">
+                                Plant Health
+                            </div>
+                            <div class="card-body">
+                                <p>Strengthens plant immunity and resistance to pathogens while enhancing pesticide effectiveness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-header">
+                                Water Management
+                            </div>
+                            <div class="card-body">
+                                <p>Improves plants' ability to regulate water content and survive periods of water stress.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-header">
+                                Universal Application
+                            </div>
+                            <div class="card-body">
+                                <p>Suitable for nearly all plant species (except acid-loving plants) from field crops to ornamentals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Application Guidelines</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Apply minimum 2 times during growing period by spraying on leaves:</p>
+                        <ul>
+                            <li><strong>Field Crops:</strong> 1.5 - 2 kg/ha + min. 300 l water/ha</li>
+                            <li><strong>Ornamentals, Fruits & Vegetables:</strong> 1.5 - 2 kg/ha + min. 400 l water/ha</li>
+                        </ul>
+                        <div class="alert alert-info mt-3">
+                            <strong>Note:</strong> For best results, apply during cooler parts of the day (early morning or late afternoon) and avoid application before expected rainfall.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Compatibility</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Pure Growth Plus is compatible with:</p>
+                        <ul>
+                            <li>Most foliar fertilizers</li>
+                            <li>Pesticides (check specific product compatibility)</li>
+                            <li>Biopesticides and organic inputs</li>
+                            <li>Micronutrient solutions</li>
+                        </ul>
+                        <p class="mt-3"><strong>Note:</strong> Always conduct a jar test before mixing with other products.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p>© 2023 Zeosen Products. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

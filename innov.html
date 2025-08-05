@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovTech Solutions - Sustainable Agricultural Technologies</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- add -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-green: #1e5631;
+            --secondary-green: #4c9a2a;
+            --light-green: #76b947;
+            --lighter-green: #a4de6c;
+            --lightest-green: #d1f0b1;
+            --dark-green: #0d2818;
+        }
+        
+        body {
+            font-family: 'Darker Grotesque', sans-serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: rgba(30, 86, 49, 0.95) !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-green) !important;
+            padding: 5px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--lighter-green);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-top: 120px;            
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-green);
+            border-color: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--light-green);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .clients-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .client-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            margin: 20px;
+            opacity: 0.7;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(30, 86, 49, 0.9), rgba(30, 86, 49, 0.9)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .products-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            border: none;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-title {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--light-green);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-green);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        .lead {
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+         li {
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .redu{
+            width: 300px;
+        }
+        .sp{
+            height: 40px;
+        }
+        
+.align-items-center p, .mb-4, .product-description {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-align: justify;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="redu" src="assets/innov_tech_logo_2.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clients">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-light ms-2 px-3" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1 class="hero-title">Innovative Agricultural Solutions</h1>
+                <p class="hero-subtitle">Transforming African agriculture through sustainable technologies that boost yields, improve quality, and enhance farmers' livelihoods.</p>
+                <a href="#about" class="btn btn-primary btn-lg animate__animated animate__pulse animate__infinite animate__slower">Discover More</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title text-center animate__animated animate__fadeIn">About Us</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbzSZtvhjrIN_GMWpNf_klwaM3pw7SIRC5DA&s" alt="Farmers using InnovTech products" class="img-fluid about-img">
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <p class="lead">Innovative Technology Solutions Global Nigeria Limited (INNOVTECH) is a private company incorporated in Nigeria & Sierra Leone.</p>
+                    <p>INNOVTECH focuses on innovative technology solutions for the African Agricultural Sector. We aim to bring real and tangible benefit to African communities through technologies which are promoting sustainable agricultural development among smallholders' farmers by improving the livelihood of farmers who have historically struggled to make an adequate living, and reducing poverty rate among the farmers.</p>
+                    <p>Increasing the productivity of both Livestock and crop cultivating farmers, raising the degree of food security of the strategic food commodities, increasing the competitiveness of agricultural products grown with our products for local and international markets.</p>
+                    <!-- <a href="#" class="btn btn-primary mt-3">Read More</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Clients Section -->
+    <section id="clients" class="clients-section">
+        <div class="container">
+            <h2 class="section-title text-center animate__animated animate__fadeIn">Our Clients</h2>
+            <div class="row justify-content-center animate__animated animate__fadeInUp">
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <img style="width: 140px;" src="https://greenfarmagrotech.com/assets/images/logo-white.png" alt="Green Farm Agro Foods" class="img-fluid client-logo">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <div class="sp"></div>
+                    <img style="height: 30px; margin-top: 10px;" src="assets/el-bethel.png" alt="El Bethel Farm" class="img-fluid client-logo">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <img src="https://ngfrepository.org.ng:8443/jspui/retrieve/cd9d362a-7cbd-4425-a508-04a1870e753e" alt="Ministry of Agriculture" class="img-fluid client-logo">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <img src="https://agcareerstart.com.au/wp-content/uploads/2022/01/NationalFarmersFederation_Primary_RGB-1.png" alt="National Federations of Farmers" class="img-fluid client-logo">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8JSt8PnIgNC_hdPqaal7mR7PkKBc0VtFclg&s" alt="Sierra Leone Women Farmers Association" class="img-fluid client-logo">
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 text-center">
+                    <img src="https://www.africa2trust.com/wba/Logos/466GOVT1004526182223.jpg" alt="Ministry of Agriculture Guinea Bissau" class="img-fluid client-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title text-center text-white animate__animated animate__fadeIn">Testimonials</h2>
+            <div class="row">
+                <div class="col-md-4 animate__animated animate__fadeInUp">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x text-white-50"></i>
+                        </div>
+                        <p class="mb-4">"Our yields have increased by 30% since we started using InnovTech products. The quality of our produce has also improved significantly."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <img src="assets/ac.png" alt="Testimonial author" class="rounded-circle" width="50">
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Madam- Jane Silla</h6>
+                                <small class="text-white-50">District Agricultural Officer, Western Area, Sierra Leone</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x text-white-50"></i>
+                        </div>
+                        <p class="mb-4">"The Pure Growth Organic Fertilizer has transformed our farm. We're seeing healthier plants and better tasting fruits with less water usage."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <img src="assets/ac.png" alt="Testimonial author" class="rounded-circle" width="50">
+                            </div>
+                            <div>
+                                <h6 class="mb-0"> Mr Benjamin Kargbo</h6>
+                                <small class="text-white-50">Ministry of Agriculture Food security, Makeni Office, Sierra Leone</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-quote-left fa-2x text-white-50"></i>
+                        </div>
+                        <p class="mb-4">"As an agricultural ministry, we've partnered with InnovTech to revolutionize agrofarms with remarkable results."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <img src="assets/ac.png" alt="Testimonial author" class="rounded-circle" width="50">
+                            </div>
+                            <div>
+                                <h6 class="mb-0">Mr Sam Kings</h6>
+                                <small class="text-white-50">Former deputy minister of Agriculture, Ministry of Agriculture, Sierra Leone. 
+
+</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5 animate__animated animate__fadeIn">
+                <!-- <a href="#" class="btn btn-outline-light btn-lg">View Video Testimonials</a> -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title text-center animate__animated animate__fadeIn">Our Products</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp">
+                    <div class="card product-card h-100">
+                        <img src="assets/pure_growth.png" class="card-img-top product-img" alt="Pure Growth Organic Fertilizer">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">PURE GROWTH ORGANIC FERTILIZER</h5>
+                            <p class="card-text product-description">Made from 100% Natural Mineral Calcite, Pure Growth Organic Fertilizer is a smart Fertilizer that improves quality and yield of cultivation while respecting the environment.</p>
+                            <a href="/puregrowth.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card product-card h-100">
+                        <img src="assets/Zoeson_Livestock.png" class="card-img-top product-img" alt="Zeosen Livestock">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">ZEOSEN LIVESTOCK</h5>
+                            <p class="card-text product-description">Zeosen Livestock is pure nature, made from Zeolite Clinoptilolite, a mineral of volcanic origin. Enhances the immune system, antioxidant enzymes, promoting digestibility.</p>
+                            <a href="/zoesen.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card product-card h-100">
+                        <img src="assets/agro-sand.png" class="card-img-top product-img" alt="AgroSand">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">AGROSAND</h5>
+                            <p class="card-text product-description">Complex soil additive that improves properties of soil, increases efficiency and utilization of nutrients in soil. Regulates water regime and ensures effective water management.</p>
+                            <a href="/agrosand.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp">
+                    <div class="card product-card h-100">
+                        <img src="assets/agro-sand-sil.png" class="card-img-top product-img" alt="AgroSand Sil M20">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">AGROSAND SIL M20</h5>
+                            <p class="card-text product-description">Ecological protection of plants against insects, diseases and UV radiation. Forms a barrier film on the plant that acts as a broad-spectrum preservative.</p>
+                            <a href="/agrosandsil.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="card product-card h-100">
+                        <img src="assets/pure_growth_plus.png" class="card-img-top product-img" alt="Pure Growth Plus">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">PURE GROWTH PLUS</h5>
+                            <p class="card-text product-description">Unique foliar fertilizer that uses powerful natural components to stimulate processes in plants that promote higher volume and enhanced quality of production.</p>
+                            <a href="/puregrowthplus.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="card product-card h-100">
+                        <img src="assets/SOIL FIX.png" class="card-img-top product-img" alt="Soil Fix">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">SOIL FIX</h5>
+                            <p class="card-text product-description">Advanced soil amendment that improves soil structure, enhances nutrient availability, and promotes healthy root development for all types of crops.</p>
+                            <a href="/soilfix.html" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- new -->
+                 <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="card product-card h-100">
+                        <img src="/assets/WEED_ACTION.png" class="card-img-top product-img" alt="Pure Growth Plus">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">WEED ACTION - ORGANIC HERBICIDE</h5>
+                            <p class="card-text product-description">Natural weed killer, which can be used on fully grown or smaller weeds. Its Non harmful to bees and friendly to insects. Eco-friendly and non-toxic</p>
+                            <!-- <a href="/puregrowthplus.html" class="btn btn-primary">Learn More</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp animate__delay-4s">
+                    <div class="card product-card h-100">
+                        <img src="assets/PEST_ACTION.png" class="card-img-top product-img" alt="Pure Growth Plus">
+                        <div class="card-body">
+                            <h5 class="card-title product-title">PEST ACTION ORGANIC PESTICIDE</h5>
+                            <p class="card-text product-description">Active on broad spectrum of pests. It can be used at any stage of vegetation from nursery to harvesting period, it can also be sprayed into the soil during land preparation stage.</p>
+                            <!-- <a href="/puregrowthplus.html" class="btn btn-primary">Learn More</a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- new end -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center animate__animated animate__fadeIn">Contact Us</h2>
+            <div class="row justify-content-center animate__animated animate__fadeInUp">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Subject">
+                                </div>
+                                <div class="mb-4">
+                                    <textarea class="form-control form-control-lg" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-5">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5><i class="fas fa-leaf me-2"></i>InnovTech Solutions</h5>
+                    <p class="mt-3">Bringing innovative agricultural technologies to African farmers to boost productivity, improve livelihoods, and promote sustainable farming practices.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Our Products</h5>
+                    <ul>
+                        <li><a href="#">Pure Growth Organic Fertilizer</a></li>
+                        <li><a href="#">Zeosen Livestock</a></li>
+                        <li><a href="#">AgroSand</a></li>
+                        <li><a href="#">AgroSand Sil M20</a></li>
+                        <li><a href="#">Pure Growth Plus</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Lagos, Nigeria & Freetown, Sierra Leone</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +234 812 542 9463</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@innovtech.com</li>
+                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM - 5PM</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 InnovTech Solutions. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> for African Agriculture</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Scroll to top button
+        const scrollTop = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('active');
+            } else {
+                scrollTop.classList.remove('active');
+            }
+        });
+        
+        scrollTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll initialization
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate__animated');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    const animationClass = element.classList.item(1);
+                    element.classList.add(animationClass);
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

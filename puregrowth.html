@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure Growth Organic Fertilizer | 100% Natural Mineral Calcite Fertilizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --pg-green: #2e7d32;
+            --pg-light-green: #e8f5e9;
+            --pg-gold: #ffd600;
+        }
+        .pg-bg-light {
+            background-color: var(--pg-light-green);
+        }
+        .pg-text-green {
+            color: var(--pg-green);
+        }
+        .pg-border-green {
+            border-color: var(--pg-green) !important;
+        }
+        .product-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--pg-green);
+            margin-bottom: 1rem;
+        }
+        .benefit-card {
+            border-left: 4px solid var(--pg-green);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .e-card {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .e-card-header {
+            background-color: var(--pg-green);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+        }
+        .nav-pills .nav-link.active {
+            background-color: var(--pg-green);
+        }
+        .nav-pills .nav-link {
+            color: var(--pg-green);
+        }
+                :root {
+            --primary-green: #1e5631;
+            --secondary-green: #4c9a2a;
+            --light-green: #76b947;
+            --lighter-green: #a4de6c;
+            --lightest-green: #d1f0b1;
+            --dark-green: #0d2818;
+        }
+        
+        body {
+            font-family: 'Darker Grotesque', sans-serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: rgba(30, 86, 49, 0.95) !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-green) !important;
+            padding: 5px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--lighter-green);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-top: 120px;            
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-green);
+            border-color: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--light-green);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .clients-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .client-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            margin: 20px;
+            opacity: 0.7;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(30, 86, 49, 0.9), rgba(30, 86, 49, 0.9)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .products-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            border: none;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-title {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--light-green);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-green);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        .lead {
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+         li {
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .redu{
+            width: 300px;
+        }
+        
+.align-items-center p, .mb-4, .product-description {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-align: justify;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="redu" src="assets/innov_tech_logo_2.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clients">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-light ms-2 px-3" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <header class="product-header text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3">PURE GROWTH ORGANIC FERTILIZER</h1>
+            <p class="lead fs-3">The Ultimate solution for your crops</p>
+            <a href="#benefits" class="btn btn-success btn-lg mt-3 px-4 py-2">Discover Benefits</a>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="assets/pure_growth.png" alt="Pure Growth Organic Fertilizer" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="pg-text-green mb-4">Nature's Smart Fertilizer</h2>
+                    <p class="lead">Pure Growth Organic Fertilizer is a smart fertilizer, made from 100% natural mineral calcite only. Calcite is mainly made of carbonate calcium, of silica magnesium and trace elements.</p>
+                    <p>This non-polluting foliar fertilizer consists of calcite micro particles that act on plant reinforcement and activate primary and secondary metabolisms. It enhances plant resistance against biotic and abiotic stresses while improving quality and yield of cultivation.</p>
+                    <div class="alert alert-success mt-4">
+                        <strong>100% Safe:</strong> Absolutely non-poisonous with no toxic threshold - always respecting the environment.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-5 pg-bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="pg-text-green">Features and Benefits</h2>
+                <p class="lead">Transform your crops with nature's mineral power</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">🌿</div>
+                            <h5>Plant Vitality</h5>
+                            <p>Brings back the plant's primeval vitality and strength, making crops strong and vital with reduced need for protective means.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">🍎</div>
+                            <h5>Fruit Quality</h5>
+                            <p>Increases percentage of dry matter, size and weight of fruits while improving organoleptic properties and taste.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">📈</div>
+                            <h5>Yield Increase</h5>
+                            <p>Significantly increases crop yields while accelerating growth and development of plants.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">🛡️</div>
+                            <h5>Disease Resistance</h5>
+                            <p>Increases plants resistance to diseases and to some extent, to pests and environmental stresses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">🍇</div>
+                            <h5>Sugar Content</h5>
+                            <p>Increases the percentage of sugar in grapes, sugar beets, and other fruits and vegetable crops.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="benefit-card card h-100">
+                        <div class="card-body">
+                            <div class="feature-icon">👨‍🌾</div>
+                            <h5>Farmer Friendly</h5>
+                            <p>Easy to apply foliar fertilizer that works with nature rather than against it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Four E's Section -->
+    <section id="four-e" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="pg-text-green">The Four E's of Pure Growth</h2>
+                <p class="lead">Why farmers worldwide are switching to Pure Growth Organic Fertilizer</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="e-card card h-100">
+                        <div class="e-card-header text-center">
+                            ECONOMICAL
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Increases yield up to 30%</li>
+                                <li class="list-group-item">20-30% less water consumption</li>
+                                <li class="list-group-item">Savings in fertilizer requirements</li>
+                                <li class="list-group-item">Less product needed per hectare</li>
+                                <li class="list-group-item">Savings on pesticides</li>
+                                <li class="list-group-item">Reduces post-harvest losses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="e-card card h-100">
+                        <div class="e-card-header text-center">
+                            ECOLOGICAL
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">100% natural mineral calcite</li>
+                                <li class="list-group-item">Reduces water requirements</li>
+                                <li class="list-group-item">Protects natural ecosystems</li>
+                                <li class="list-group-item">Non-polluting formula</li>
+                                <li class="list-group-item">No toxic threshold</li>
+                                <li class="list-group-item">Sustainable agriculture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="e-card card h-100">
+                        <div class="e-card-header text-center">
+                            EFFICIENT
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Accelerates fruit ripening</li>
+                                <li class="list-group-item">Speeds up crop development</li>
+                                <li class="list-group-item">Drought resistance</li>
+                                <li class="list-group-item">Disease resistance</li>
+                                <li class="list-group-item">Consistent results</li>
+                                <li class="list-group-item">Easy application</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="e-card card h-100">
+                        <div class="e-card-header text-center">
+                            EDGE TECHNOLOGY
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Faster plant growth</li>
+                                <li class="list-group-item">Pest and fungi protection</li>
+                                <li class="list-group-item">Stress resistance (drought/frost)</li>
+                                <li class="list-group-item">Higher Brix levels</li>
+                                <li class="list-group-item">Improved vitamin content</li>
+                                <li class="list-group-item">Uniform fruit ripening</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section id="application" class="py-5 pg-bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="pg-text-green mb-4">Application Guidelines</h2>
+                    
+                    <div class="accordion" id="applicationAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Recommended Crops
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#applicationAccordion">
+                                <div class="accordion-body">
+                                    <p>Suitable for all crops except acid-loving plants. Particularly effective on:</p>
+                                    <ul>
+                                        <li>Fruits (grapes, apples, citrus, berries)</li>
+                                        <li>Vegetables (tomatoes, peppers, leafy greens)</li>
+                                        <li>Field crops (corn, wheat, soybeans)</li>
+                                        <li>Root crops (potatoes, sugar beets, carrots)</li>
+                                        <li>Ornamentals and nursery stock</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Application Rates
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#applicationAccordion">
+                                <div class="accordion-body">
+                                    <table class="table table-bordered">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th>Crop Type</th>
+                                                <th>Rate</th>
+                                                <th>Water</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Field Crops</td>
+                                                <td>1.5-2 kg/ha</td>
+                                                <td>300 L/ha</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Fruits & Vegetables</td>
+                                                <td>1.5-2 kg/ha</td>
+                                                <td>400 L/ha</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ornamentals</td>
+                                                <td>1.5-2 kg/ha</td>
+                                                <td>400 L/ha</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Timing & Frequency
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#applicationAccordion">
+                                <div class="accordion-body">
+                                    <ul>
+                                        <li>Apply minimum 2 times during growing season</li>
+                                        <li>First application at early growth stage</li>
+                                        <li>Second application at flowering/fruit set</li>
+                                        <li>Additional applications may benefit during stress periods</li>
+                                        <li>Apply during cooler parts of the day (morning/evening)</li>
+                                        <li>Avoid application before expected rainfall</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="card h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Technical Specifications</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><strong>Active Ingredient:</strong> Natural Mineral Calcite (≥95%)</li>
+                                <li class="list-group-item"><strong>Composition:</strong> Calcium carbonate, silica magnesium, trace elements</li>
+                                <li class="list-group-item"><strong>Form:</strong> Micronized powder</li>
+                                <li class="list-group-item"><strong>Particle Size:</strong> 10-50 microns</li>
+                                <li class="list-group-item"><strong>pH:</strong> 7.5-8.5</li>
+                                <li class="list-group-item"><strong>Solubility:</strong> Dispersible in water</li>
+                                <li class="list-group-item"><strong>Packaging:</strong> 5kg, 10kg, 25kg bags</li>
+                                <li class="list-group-item"><strong>Shelf Life:</strong> Indefinite when stored properly</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="pg-text-green">What Farmers Say</h2>
+                <p class="lead">Real results from real users</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card border-success">
+                                    <div class="card-body text-center p-5">
+                                        <p class="fs-4 mb-4">"After switching to Pure Growth, our grape yields increased by 28% with significantly higher sugar content. The quality improvement was noticeable immediately."</p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="https://via.placeholder.com/80?text=Farmer" alt="Farmer" class="rounded-circle me-3" width="60">
+                                            <div class="text-start">
+                                                <h6 class="mb-0">Miguel Rodriguez</h6>
+                                                <small class="text-muted">Vineyard Owner, Spain</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-success">
+                                    <div class="card-body text-center p-5">
+                                        <p class="fs-4 mb-4">"Our tomato plants showed remarkable drought resistance during a particularly dry season. The fruits had better color, firmness, and shelf life than ever before."</p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="https://via.placeholder.com/80?text=Farmer" alt="Farmer" class="rounded-circle me-3" width="60">
+                                            <div class="text-start">
+                                                <h6 class="mb-0">Sarah Johnson</h6>
+                                                <small class="text-muted">Organic Vegetable Farm, California</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card border-success">
+                                    <div class="card-body text-center p-5">
+                                        <p class="fs-4 mb-4">"The reduction in pesticide use while maintaining healthy crops has been a game-changer for our operation. Pure Growth delivers on its promises."</p>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <img src="https://via.placeholder.com/80?text=Farmer" alt="Farmer" class="rounded-circle me-3" width="60">
+                                            <div class="text-start">
+                                                <h6 class="mb-0">Raj Patel</h6>
+                                                <small class="text-muted">Tea Estate Manager, India</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>Ready to Transform Your Crops?</h3>
+                    <p class="lead">Contact us for more information or to place an order</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +1 (800) 123-4567</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@puregrowth.com</li>
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> 123 Farm Road, Agricultural City, AC 12345</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-black text-white-50">
+        <div class="container text-center">
+            <p class="mb-0">© 2023 Pure Growth Organic Fertilizer. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

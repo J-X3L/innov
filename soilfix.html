@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Fix - Advanced Soil Conditioner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-header {
+            background-color: #e9f5e9;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        .product-image {
+            max-height: 400px;
+            object-fit: contain;
+            margin-bottom: 2rem;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefits-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .benefits-list li:before {
+            content: "✓";
+            color: #28a745;
+            margin-right: 0.5rem;
+        }
+                :root {
+            --primary-green: #1e5631;
+            --secondary-green: #4c9a2a;
+            --light-green: #76b947;
+            --lighter-green: #a4de6c;
+            --lightest-green: #d1f0b1;
+            --dark-green: #0d2818;
+        }
+        
+        body {
+            font-family: 'Darker Grotesque', sans-serif;
+            overflow-x: hidden;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: rgba(30, 86, 49, 0.95) !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-green) !important;
+            padding: 5px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--lighter-green);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-top: 120px;            
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-green);
+            border-color: var(--secondary-green);
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--light-green);
+            border-color: var(--light-green);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--light-green);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .about-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .clients-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .client-logo {
+            height: 80px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+            margin: 20px;
+            opacity: 0.7;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(30, 86, 49, 0.9), rgba(30, 86, 49, 0.9)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .products-section {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            border: none;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        .product-title {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            color: var(--light-green);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-green);
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+        
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background-color: var(--light-green);
+            transform: translateY(-5px);
+        }
+
+        .lead {
+            font-size: 1.75rem;
+            font-weight: 500;
+        }
+         li {
+            list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .redu{
+            width: 300px;
+        }
+        
+.align-items-center p, .mb-4, .product-description {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-align: justify;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body data-bs-spy="scroll" data-bs-target=".navbar">
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img class="redu" src="assets/innov_tech_logo_2.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clients">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-sm btn-outline-light ms-2 px-3" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <div class="product-header text-center">
+        <div class="container">
+            <h1 class="display-4">SOIL FIX</h1>
+            <p class="lead">Revolutionary soil conditioner for optimal plant growth and soil health</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/SOIL FIX.png" alt="Soil Fix Product" class="img-fluid product-image rounded shadow">
+            </div>
+            <div class="col-md-6">
+                <h2 class="mb-4">Transform Your Soil's Potential</h2>
+                <p>Soil Fix is our premium soil conditioning solution designed to revitalize tired soils and maximize plant growth potential. This innovative formula combines natural minerals with organic compounds to create the perfect environment for root development and nutrient uptake.</p>
+                
+                <h3 class="mt-5">Key Benefits</h3>
+                <ul class="benefits-list">
+                    <li>Improves soil structure and aeration</li>
+                    <li>Enhances water retention in sandy soils</li>
+                    <li>Reduces compaction in clay soils</li>
+                    <li>Promotes beneficial microbial activity</li>
+                    <li>Helps balance soil pH naturally</li>
+                    <li>Reduces nutrient leaching</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>How Soil Fix Works</h3>
+                <p>Soil Fix contains a proprietary blend of mineral and organic components that work synergistically to improve your soil's physical, chemical, and biological properties. The unique formulation creates a stable soil structure that resists compaction while maintaining optimal pore space for air and water movement.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-4 text-center">
+                        <div class="feature-icon">🌱</div>
+                        <h4>Root Development</h4>
+                        <p>Creates ideal conditions for robust root growth and expansion.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-icon">💧</div>
+                        <h4>Water Management</h4>
+                        <p>Holds water in sandy soils while improving drainage in clay soils.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-icon">🔄</div>
+                        <h4>Nutrient Retention</h4>
+                        <p>Reduces fertilizer runoff and makes nutrients more available to plants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Application Guidelines</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Application</th>
+                                <th>Rate</th>
+                                <th>Method</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>New Lawns</td>
+                                <td>5-10 lbs per 100 sq ft</td>
+                                <td>Mix into top 6" of soil before seeding</td>
+                            </tr>
+                            <tr>
+                                <td>Existing Lawns</td>
+                                <td>3-5 lbs per 100 sq ft</td>
+                                <td>Top dress and water in</td>
+                            </tr>
+                            <tr>
+                                <td>Gardens</td>
+                                <td>1-2 cups per plant</td>
+                                <td>Mix into planting hole or broadcast</td>
+                            </tr>
+                            <tr>
+                                <td>Potting Mix</td>
+                                <td>10-20% by volume</td>
+                                <td>Blend with other potting components</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Technical Specifications</h5>
+                        <ul>
+                            <li><strong>Form:</strong> Granular</li>
+                            <li><strong>Particle Size:</strong> 0.5-3mm</li>
+                            <li><strong>pH:</strong> 6.5-7.5</li>
+                            <li><strong>Organic Matter:</strong> ≥15%</li>
+                            <li><strong>Packaging:</strong> 10kg, 25kg bags</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Ideal For</h5>
+                        <ul>
+                            <li>Lawn renovation and maintenance</li>
+                            <li>Vegetable and flower gardens</li>
+                            <li>Tree and shrub planting</li>
+                            <li>Container gardening</li>
+                            <li>Sports fields and golf courses</li>
+                            <li>Erosion control applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p>© 2023 Zeosen Products. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
