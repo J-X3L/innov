@@ -339,6 +339,64 @@
             font-size: 1.4rem;
             text-align: justify;
         }
+
+        /* New styles for About Us sections */
+        li {
+    list-style-type: disc;
+    list-style: disc;
+    color: #225934;
+}
+        .mission-vision-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+
+        .mission-vision-box h3 {
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .mission-vision-box h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: var(--light-green);
+            bottom: -10px;
+            left: 0;
+        }
+
+        .values-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .values-list li {
+            margin-bottom: 15px;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        .values-list li::before {
+            /*content: '\f00c'; */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--light-green);
+            position: absolute;
+            left: 0;
+        }
+
+        .client-country {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
         
         @media (max-width: 768px) {
             .hero-title {
@@ -414,15 +472,51 @@
     <section id="about" class="about-section">
         <div class="container">
             <h2 class="section-title text-center animate__animated animate__fadeIn">About Us</h2>
-            <div class="row align-items-center">
+            <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-4 mb-lg-0 animate__animated animate__fadeInLeft">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbzSZtvhjrIN_GMWpNf_klwaM3pw7SIRC5DA&s" alt="Farmers using InnovTech products" class="img-fluid about-img">
                 </div>
                 <div class="col-lg-6 animate__animated animate__fadeInRight">
-                    <p class="lead">Innovative Technology Solutions Global Nigeria Limited (INNOVTECH) is a private company incorporated in Nigeria & Sierra Leone.</p>
-                    <p>INNOVTECH focuses on innovative technology solutions for the African Agricultural Sector. We aim to bring real and tangible benefit to African communities through technologies which are promoting sustainable agricultural development among smallholders' farmers by improving the livelihood of farmers who have historically struggled to make an adequate living, and reducing poverty rate among the farmers.</p>
-                    <p>Increasing the productivity of both Livestock and crop cultivating farmers, raising the degree of food security of the strategic food commodities, increasing the competitiveness of agricultural products grown with our products for local and international markets.</p>
-                    <!-- <a href="#" class="btn btn-primary mt-3">Read More</a> -->
+                    <p class="lead">Innovative Technology Solutions Global Nigeria Limited (ITSG) is a private company incorporated in Nigeria.</p>
+                    <p>ITSG focuses on innovative technology solutions for African consumers. We aim to bring real and tangible benefit to African communities through technologies which will improve the livelihood of individuals who have historically struggled to make an adequate living.</p>
+                    <p>All of our products produce positive gains across agricultural landscape in yield increase, pest and disease control, post-harvest losses and climate change impact through water preservation.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp">
+                    <div class="mission-vision-box">
+                        <h3>Our Mission</h3>
+                        <p>To contribute towards the enhancement of food security across Africa, transforming the lives of smallholder farmers, and facilitate youth inclusion in agribusiness across Africa.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="mission-vision-box">
+                        <h3>Our Vision</h3>
+                        <p>To bring happiness and joy to the faces of every smallholder farmer across Africa through innovative agricultural solutions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="mission-vision-box">
+                        <h3>Our Philosophy</h3>
+                        <ul class="values-list">
+                            <li>Honesty</li>
+                            <li>Integrity</li>
+                            <li>Transparency</li>
+                            <li>Innovation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="mission-vision-box">
+                        <h3>Our Values</h3>
+                        <ul class="values-list">
+                            <li>Feel the Customer</li>
+                            <li>Think Excellence</li>
+                            <li>Do the Right Thing</li>
+                            <li>Lead, Together</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -435,22 +529,64 @@
             <div class="row justify-content-center animate__animated animate__fadeInUp">
                 <div class="col-6 col-md-4 col-lg-2 text-center">
                     <img style="width: 140px;" src="https://greenfarmagrotech.com/assets/images/logo-white.png" alt="Green Farm Agro Foods" class="img-fluid client-logo">
+                    <span class="client-country">Nigeria</span>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center">
                     <div class="sp"></div>
                     <img style="height: 30px; margin-top: 10px;" src="assets/el-bethel.png" alt="El Bethel Farm" class="img-fluid client-logo">
+                    <span class="client-country">Sierra Leone</span>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="https://ngfrepository.org.ng:8443/jspui/retrieve/cd9d362a-7cbd-4425-a508-04a1870e753e" alt="Ministry of Agriculture" class="img-fluid client-logo">
+                    <img src="https://slecad.biz/wp-content/uploads/2022/02/cropped-slecad-Logo.jpg" alt="SLECAD" class="img-fluid client-logo">
+                    <span class="client-country">Sierra Leone Chamber for Agric-Business Development</span>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center">
-                    <img src="https://agcareerstart.com.au/wp-content/uploads/2022/01/NationalFarmersFederation_Primary_RGB-1.png" alt="National Federations of Farmers" class="img-fluid client-logo">
+                    <img src="https://i0.wp.com/naffsl.com/wp-content/uploads/2024/11/cropped-IMG-20241108-WA0000-copy-1.jpg?fit=1010%2C1063&ssl=1" alt="National Federations of Farmers" class="img-fluid client-logo">
+                    <span class="client-country">National Federation of Farmers Sierra leone</span>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8JSt8PnIgNC_hdPqaal7mR7PkKBc0VtFclg&s" alt="Sierra Leone Women Farmers Association" class="img-fluid client-logo">
+                    <span class="client-country">Sierra leone</span>
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center">
                     <img src="https://www.africa2trust.com/wba/Logos/466GOVT1004526182223.jpg" alt="Ministry of Agriculture Guinea Bissau" class="img-fluid client-logo">
+                    <span class="client-country">Guinea Conakry</span>
+                </div>
+            </div>
+
+            <!-- Dummy Client Page Section -->
+            <div class="row mt-5 animate__animated animate__fadeIn">
+                <div class="col-12">
+                    <h3 class="text-center mb-4">Our Client Network</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Nr5K-y0B1Ey3KXkC_WHKPRLpMkzXfcbt1Q&s" alt="Client Logo" class="img-fluid mb-3">
+                                    <h5>Sierra Leone Agricultural Research Institute (SLARI)</h5>
+                                    <span class="client-country">Sierra Leone</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <img style="width: 100px" src="https://maf.gov.sl/wp-content/uploads/2024/09/MAFS-LOGO_02-removebg-preview.png" alt="Client Logo" class="img-fluid mb-3">
+                                    <h5>Ministry of Agriculture and Food Security</h5>
+                                    <span class="client-country">Sierra Leone</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE26yyhCIiwpkNLfb_1HWN3P2y7-NmCBdd1FccFoYjUO_-yWVN_S5dE-GhYM1adEKX8g4&usqp=CAU" alt="Client Logo" class="img-fluid mb-3">
+                                    <h5>Benue State Ginger Farmers Association</h5>
+                                    <span class="client-country">Nigeria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -466,7 +602,7 @@
                         <div class="mb-3">
                             <i class="fas fa-quote-left fa-2x text-white-50"></i>
                         </div>
-                        <p class="mb-4">"Our yields have increased by 30% since we started using InnovTech products. The quality of our produce has also improved significantly."</p>
+                        <p class="mb-4">"We experienced better quality of crops on using pure growth, significant yield increase, pest and disease control and decrease in post harvest losses."</p>
                         <div class="d-flex align-items-center">
                             <div class="me-3">
                                 <img src="assets/ac.png" alt="Testimonial author" class="rounded-circle" width="50">
@@ -483,7 +619,7 @@
                         <div class="mb-3">
                             <i class="fas fa-quote-left fa-2x text-white-50"></i>
                         </div>
-                        <p class="mb-4">"The Pure Growth Organic Fertilizer has transformed our farm. We're seeing healthier plants and better tasting fruits with less water usage."</p>
+                        <p class="mb-4">"The Pure Growth Organic Fertilizer has transformed our farm. We're seeing healthier plants, increase in germination rate and better tasting fruits with less water usage."</p>
                         <div class="d-flex align-items-center">
                             <div class="me-3">
                                 <img src="assets/ac.png" alt="Testimonial author" class="rounded-circle" width="50">
@@ -500,13 +636,13 @@
                         <div class="mb-3">
                             <i class="fas fa-quote-left fa-2x text-white-50"></i>
                         </div>
-                        <p class="mb-4">"As an agricultural ministry, we've partnered with InnovTech to revolutionize agrofarms with remarkable results."</p>
+                        <p class="mb-4">"As a farmer I personally invested a substantial amount of income on pure growth for my private farm od onions and pepper and I got remarkable results with my crops and significant yield"</p>
                         <div class="d-flex align-items-center">
                             <div class="me-3">
                                 <img src="assets/ac.png" alt="Testimonial author" class="rounded-circle" width="50">
                             </div>
                             <div>
-                                <h6 class="mb-0">Mr Sam Kings</h6>
+                                <h6 class="mb-0">Dr. Sam Kings</h6>
                                 <small class="text-white-50">Former deputy minister of Agriculture, Ministry of Agriculture, Sierra Leone. 
 
 </small>
